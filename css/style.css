@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+  --background: #ffffff;
+  --opposite_background: #1c1d21;
+  --section_background:#faf8f8;
+  --text_and_details: #121212;
+  --blue_contrast: #004FF9;
+}
+
+
+body{
+  margin:0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  max-width: 100%;
+  touch-action: pan-y;
+}
+
+main{
+  background: var(--background);
+  color: var(--text_and_details);
+  width: 100%;
+  transition: 1.0s;
+}
+
+
+.navbar ul li:hover:not(:nth-child(4)) ~ #cursor{
+  background: transparent;
+  border: 1px solid var(--text_and_details);
+  
+} 
+
+.navbar #hamburger_checkbox:hover ~ ul #cursor{
+  opacity: 0;
+} 
+
+ 
+/* --------------- Navbar ----------------*/
+
+.navbar{
+  height: 10vh;
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+.navbar ul{
+  min-height: 10vh;
+  margin:0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  margin-right: 5rem;
+}
+
+.navbar ul li{
+  margin-right: 7.5rem;
+}
+
+.navbar ul li a{
+  text-decoration: none;
+  color: var(--text_and_details);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+.nav_toggle{
+  display: flex;
+  align-items: center;
+}
+
+/*---------- Imported Switch -------------*/
+
+.switch {
+  --secondary-container: #3a4b39;
+  --primary: #84da89;
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 2.4em;
+  height: 20px;
+}
+
+.switch input {
+  display: none;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;    
+  right: 0;
+  bottom: 0;
+  background-color: #262527;
+  transition: .2s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  border-radius: 20px;
+  left: 0.1em;
+  bottom: 0.15em;
+  background-color: #aeaaae;
+  transition: .4s;
+}
+
+input:checked + .slider::before {
+  background-color: var(--blue_contrast);
+}
+
+input:checked + .slider {
+  background-color: rgb(17, 17, 244);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--blue_contrast);
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.2em);
+}
+
+#hamburger_checkbox{
+  display: none;
+}
+
+.hamburger_button{
+  transition: 1s;
+  position: fixed;
+  top: 15px;
+  right: 50%;
+  left:50%;
+  transform: translateX(-35%);
+  width: 40px;
+  height: 35px;
+  display: none;
+  padding: 5px;
+  border: 1px solid var(--text_and_details);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.hamburger_button span{
+  display: block;
+  margin: 5px auto;
+  width: 27.5px;
+  height: 5px;
+  background: var(--text_and_details);
+  border-radius: 100px;
+  transition: 0.5s;
+}
+
+#hamburger_checkbox:checked ~ .hamburger_button span:nth-child(1){
+  position: absolute;
+  right: 30%;
+  left: 30%;
+  width: 30px;
+  transform: rotate(45deg);
+  transform-origin: top left;
+}
+#hamburger_checkbox:checked ~ .hamburger_button span:nth-child(2){
+  position: absolute;
+  opacity: 0;
+  top: 40%;
+  bottom: 40%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%,-50%);
+  
+}
+#hamburger_checkbox:checked ~ .hamburger_button span:nth-child(3){
+  position: absolute;
+  width: 30px;
+  top: 25px;
+  right: 30%;
+  left: 30%;
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+}
+
+
+@media (max-width: 925px) {
+  .navbar{
+      width: 100%;
+      position: relative;
+  }
+  .navbar ul{
+      width: 100%;
+      min-height: 75px;
+      background: var(--section_background);
+      position: fixed;
+      flex-direction: column;
+      z-index: 97;
+  }
+  .navbar ul li{
+      margin-right: 0;
+      z-index: 98;
+  }
+  .nav_toggle{
+      display: none;
+  }
+  .hamburger_button{
+      display: block;
+      z-index: 99;
+      transform: translateX(-50%);
+  }
+  #hamburger_checkbox:checked ~ ul .nav_toggle{
+      margin: 1rem 0;
+      display: initial;
+  }
+  #hamburger_checkbox:checked ~ ul{
+      padding-top: 80px;
+  }
+}
+
+/* ---------- Presentation ---------------*/
+
+.header-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15% 5vh 15%;
+  height: 85vh;
+  width: 70%;
+  font-family: 'Exo 2', sans-serif;
+  margin-bottom: 0;
+}
+
+.photo{
+  max-width: 100%;
+  width: 300px;
+  height: 300px;
+  border: none;
+  border-radius: 50%;  
+}
+.header-txt{
+  display: grid;
+  place-items: center;
+  margin-right: 10px;
+}
+
+.header-txt h3{
+  font-size: 40px;
+  text-align: center;
+  font-weight: 900;
+  margin: 35px;
+}
+
+/* download button*/
+.header-txt a{
+  text-decoration: none;
+}
+.download-cv{
+  background: var(--text_and_details);
+  color: var(--background);
+  border: none;
+  border-radius: 15px;
+  padding: 10px 25px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 7.5px;
+}
+.header-img a{
+  text-decoration: none;
+}
+.download-cv:hover{
+  background: var(--blue_contrast);
+  cursor: pointer;
+}
+
+.text{
+  text-align: center;
+  margin: 0px;
+  font-size: 60px;
+  font-weight:bold;
+  background: #004FF9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,#004FF9, #FFF94C);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,#004FF9, #FFF94C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text; 
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.social-links{
+  display: flex;
+  justify-content: space-around;
+  font-size: 35px;
+  margin-top: 40px;
+
+}
+
+.social-links a{
+  text-decoration: none;
+}
+.social-links a {
+  color: var(--text_and_details); /* Color de los iconos en modo claro */
+}
+.dark-mode .social-links a {
+  color: var(--opposite_background); /* Color de los iconos en modo oscuro */
+}
+
+.social-links i:hover {
+  background-color: var(--blue_contrast);
+  padding: 5px;
+  cursor: pointer;
+}
+
+
