@@ -1,74 +1,79 @@
-// Light/Dark Mode
 let root = document.documentElement; // Getting CSS Variables access
-var dark_switch = document.getElementById("dark_switch");
-var toggleLight=true; // 1 = Light
-dark_switch.addEventListener("change",()=>{
-    toggleLight=!toggleLight;
-    if(!toggleLight){
-      document.body.classList.add('dark-mode');
-      efectoMaquinaEscribir()
-        root.style.setProperty('--background', "#1c1d21");
-        root.style.setProperty('--opposite_background', "#ffffff");
-        root.style.setProperty('--text_and_details', "#ffffff");
-        root.style.setProperty('--section_background', "#161616");
-        
+let dark_switch = document.getElementById("dark_switch");
+let toggleLight = true; // true = Light
+
+dark_switch.addEventListener("change", () => {
+    toggleLight = !toggleLight;
+
+    if (!toggleLight) {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
     }
-    else if(toggleLight){
-      document.body.classList.remove('dark-mode');
-      efectoMaquinaEscribir()
-        root.style.setProperty('--background', "#ffffff");
-        root.style.setProperty('--opposite_background', "#1c1d21");
-        root.style.setProperty('--text_and_details', "#121212");
-        root.style.setProperty('--section_background', "#e4e4e4");
-    }
-})
+
+    efectoMaquinaEscribir();
+
+    root.style.setProperty('--background', toggleLight ? "#ffffff" : "#1c1d21");
+    root.style.setProperty('--opposite_background', toggleLight ? "#1c1d21" : "#ffffff");
+    root.style.setProperty('--text_and_details', toggleLight ? "#121212" : "#ffffff");
+    root.style.setProperty('--section_background', toggleLight ? "#e4e4e4" : "#161616");
+});
 
 
 
-var nav_items = document.querySelectorAll(".nav-item");
-var hamburger_checkbox = document.querySelector("#hamburger_checkbox")
-nav_items.forEach((item)=>{
-    item.addEventListener("mouseover",(e)=>{
-        cursor.style.display='block'
-    })
-    item.addEventListener("click",()=>{
-        //Active
-        nav_items.forEach(i=>{
-            if(i!=item){
-                i.style.color= "var(--text_and_details)";
-                i.style.paddingBottom='0px';
-                i.style.borderBottom='0px';
-            }
-            else{
-                i.style.color='var(--blue_contrast)';
-                i.style.textShadow= "rgba(0, 0, 0, 0.5) 0px 0 10px";
-                i.style.borderBottom='1px solid var(--blue_contrast)';
-            }
-        })
-        hamburger_checkbox.checked=false
-    })
-})
+let nav_items = document.querySelectorAll(".nav-item");
+let hamburger_checkbox = document.querySelector("#hamburger_checkbox");
 
-
-
-function efectoMaquinaEscribir(){
-const app = document.getElementById('typewriter');
-const typewriter = new Typewriter(app,{loop:false, delay:200});
-typewriter
-.typeString('Carlos Vladislavic')
-.pauseFor(2000)
-.start();
-}
-document.addEventListener('DOMContentLoaded', function() {
-efectoMaquinaEscribir();
-  });
-
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    var togglerButton = document.querySelector('.navbar-toggler');
-    var closeIcon = document.getElementById('close-icon');
-  
-    togglerButton.addEventListener('click', function() {
-      closeIcon.classList.toggle('d-none');
+nav_items.forEach((item) => {
+    item.addEventListener("mouseover", (e) => {
+        cursor.style.display = 'block';
     });
-  });
+
+    item.addEventListener("click", () => {
+        // Reset all nav items
+        nav_items.forEach(i => {
+            i.style.color = "var(--text_and_details)";
+            i.style.paddingBottom = '0px';
+            i.style.borderBottom = '0px';
+        });
+
+        // Set styles for the clicked nav item
+        item.style.color = 'var(--blue_contrast)';
+        item.style.textShadow = "rgba(0, 0, 0, 0.5) 0px 0 10px";
+        item.style.borderBottom = '1px solid var(--blue_contrast)';
+
+        hamburger_checkbox.checked = false;
+    });
+});
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    let togglerButton = document.querySelector('.nav-toggle');
+    let closeIcon = document.getElementById('close-icon');
+    
+    if (togglerButton) {
+        togglerButton.addEventListener('click', function() {
+            closeIcon.classList.toggle('d-none');
+        });
+    }
+});
+
+
+
+ 
+     function efectoMaquinaEscribir() {
+        const app = document.getElementById('typewriter');
+        if (app) {
+            new Typewriter(app, {
+                loop: false,
+                delay: 200
+            })
+            .typeString('Carlos Vladislavic')
+            .pauseFor(2000)
+            .start();
+        }
+    }
+    
+    document.addEventListener('DOMContentLoaded', efectoMaquinaEscribir);
+    
+  

@@ -230,10 +230,9 @@ input:checked + .slider:before {
   align-items: center;
   justify-content: space-between;
   padding: 0 15% 5vh 15%;
-  height: 85vh;
+  height: 75vh;
+  margin: 0;
   width: 70%;
-  font-family: 'Exo 2', sans-serif;
-  margin-bottom: 0;
 }
 
 .photo{
@@ -252,8 +251,8 @@ input:checked + .slider:before {
 .header-txt h3{
   font-size: 40px;
   text-align: center;
-  font-weight: 900;
-  margin: 35px;
+  font-weight: 600;
+  margin: 25px;
 }
 
 /* download button*/
@@ -316,4 +315,19 @@ input:checked + .slider:before {
   cursor: pointer;
 }
 
+.container-climate{
+  width: 35%; /* Puedes ajustar el ancho según tus necesidades */
+   /* Centra el contenedor en la página */
 
+}
+.climate{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.tem{
+  font-size: 25px;
+  font-weight: 700;
+ 
+}
