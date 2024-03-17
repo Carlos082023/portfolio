@@ -21,19 +21,8 @@ main{
   background: var(--background);
   color: var(--text_and_details);
   width: 100%;
-  transition: 1.0s;
+  transition: 0.8s;
 }
-
-
-.navbar ul li:hover:not(:nth-child(4)) ~ #cursor{
-  background: transparent;
-  border: 1px solid var(--text_and_details);
-  
-} 
-
-.navbar #hamburger_checkbox:hover ~ ul #cursor{
-  opacity: 0;
-} 
 
  
 /* --------------- Navbar ----------------*/
@@ -70,6 +59,17 @@ main{
   display: flex;
   align-items: center;
 }
+
+.navbar ul li:hover:not(:nth-child(4)) ~ #cursor{
+  background: transparent;
+  border: 1px solid var(--text_and_details);
+  
+} 
+
+.navbar #hamburger_checkbox:hover ~ ul #cursor{
+  opacity: 0;
+} 
+
 
 /*---------- Imported Switch -------------*/
 
@@ -129,6 +129,8 @@ input:focus + .slider {
 input:checked + .slider:before {
   transform: translateX(1.2em);
 }
+
+/*----hamburger-----*/
 
 #hamburger_checkbox{
   display: none;
@@ -330,4 +332,50 @@ input:checked + .slider:before {
   font-size: 25px;
   font-weight: 700;
  
+}
+
+
+hr{
+  background-color: #444; /* Gris oscuro */
+  height: 5px; /* Grosor no tan grueso */
+  width: 80%; /* 80% del ancho de la página */
+  margin: 0 auto; /* Centrar horizontalmente */
+  
+
+}
+
+/*----introduccion---------*/
+.introduction{
+  padding:  8vh 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.introduction h2{
+  text-align: center;
+  letter-spacing: 15px;
+  font-size: 75px;
+  font-weight: 700;
+  margin-top: 70px;
+}
+
+.introduction h3{
+  text-align: center;
+  width: 50%;
+  font-size: 35px;
+  font-weight: 700;
+  margin-top: 5px;
+ 
+}
+
+.introduction p{
+  text-align:center;
+  font-size: 20px;
+  width: 60%;
+  margin-top: 40px;
+  font-weight: 600;
 }
