@@ -1,0 +1,197 @@
+/* font-family: "Inconsolata", monospace;
+font-family: "Roboto Mono", monospace; */
+/*normalizacion*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Inconsolata','monospace';
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+ /* Diseño de Header */
+header{
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 3%;
+    background-color: transparent;
+}
+.logo{
+    font-size: 30px;
+    font-weight: 800;
+}
+.navlist{
+    display: flex;   
+}
+.navlist a {
+    margin-left: 80px;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .5s ease;
+}
+.navlist a:hover{
+    border-bottom: 2px solid white;
+}
+
+ #menu-icon{
+    display: none;
+} 
+#menu-icon{
+    font-size: 40px;
+    z-index: 101;
+    cursor: pointer;
+}
+#menu-toggle{
+    display: none;
+}
+.menu-icon-action{
+    display: none;
+}
+/* Diseño de HERO */
+.hero{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+section{
+    padding: 0 8%;
+}
+
+.hero-text h5{
+    font-size: 20px;
+    font-weight: 400px;
+    margin-bottom: 25px;
+}
+.hero-text h4{
+    font-size: 15px;
+    font-weight: 600px;
+    margin-bottom: 25px;
+}
+.hero-text h1{
+    font-family: "Roboto Mono", monospace;
+    font-size: 55px;
+    line-height: 1;
+    margin: 0 0 30px;
+}
+.hero-text p{
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+.hero-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-img img{
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    box-shadow: 10px 10px 20px  #888888;
+    transition: all 5s linear;
+    
+}
+.hero-img img:hover{
+    width: 450px;
+    height: 450px;
+    opacity: 0.6;
+}
+.hero-text a{
+    display: inline-block;
+    background-color: #4d4d4d;
+    border: 1px solid white;
+    padding: 15px;
+    line-height: 1.4;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+    letter-spacing: 1.5px;
+
+}
+.hero-text a i{
+    margin-left: 15px;
+    font-size: 20px;    
+    vertical-align: middle;
+}
+.hero-text a:hover{
+    background-color: transparent;
+    transform: translateX(5px);
+    
+}
+/* Diseño de Iconos sociales */
+.icons{
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+.icons i{
+    display: block;
+    margin: 25px 0;
+    font-size: 28px;
+    transition: all .5s ease;
+}
+.icons i:hover{
+    color: #4d4d4d;
+    transform: translateY(-5px);
+}
+
+/* diseño de scroll-down */
+.scroll-down{
+    position:absolute;
+    bottom: 6%;
+    right: 3%;
+}
+.scroll-down i{
+    display: block;
+    padding: 12px;
+    font-size: 30px;
+    background-color: #173c45;
+    border-radius: 30px;
+    transition: all .5s ease;
+}
+.scroll-down i:hover{
+    transform: translateY(-5px);
+}
+
+@media (max-width:992px)
+{
+    section{
+        padding: 0 3%;
+        transition: .2s;
+    }
+    .hero-text{
+        padding-top: 0;
+    }
+    .hero-img{
+        text-align: center;
+    }
+    .icons{
+        display: flex;
+        position: absolute;
+        bottom: 15%; /* Ajusta este valor según lo necesites */
+        top: auto; /* Para evitar conflictos con el 'top' anterior */
+        transform: translateY(0); /* Resetea el translate para alinear correctamente */
+        padding: 0 3%;
+        }
+        .icons i{
+            margin-right: 40px;
+        }
+       
+    }
