@@ -72,12 +72,12 @@ section{
 }
 
 .hero-text h5{
-    font-size: 20px;
-    font-weight: 400px;
+    font-size: 30px;
+    font-weight: 500px;
     margin-bottom: 25px;
 }
 .hero-text h4{
-    font-size: 15px;
+    font-size: 25px;
     font-weight: 600px;
     margin-bottom: 25px;
 }
@@ -185,10 +185,11 @@ section{
     .icons{
         display: flex;
         position: absolute;
-        bottom: 15%; /* Ajusta este valor según lo necesites */
+        bottom: 12%; /* Ajusta este valor según lo necesites */
         top: auto; /* Para evitar conflictos con el 'top' anterior */
         transform: translateY(0); /* Resetea el translate para alinear correctamente */
         padding: 0 3%;
+        
         }
         .icons i{
             margin-right: 40px;
