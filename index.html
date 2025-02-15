@@ -21,18 +21,16 @@
     <header>
         <a href="#" class="logo">CVLADISLAVIC</a>
 
-        <input type="checkbox" name="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon-action">
-            <div class='bx bx-menu' id="menu-icon"></div>
-        </label>
+        <!-- Menú Hamburguesa -->
+        <div class='bx bx-menu' id="menu-icon"></div>
 
-        <ul class="navlist">
+
+        <ul class="navlist" id="navlist">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
-
     </header>
 
     <!-- HERO SECTION -->
@@ -42,21 +40,27 @@
             <h1 id="typewriter"></h1>
             <h4>Software Developer</h4>
             <p> Recently graduated from UCES, I obtained my degree in Programming Technical Studies</p>
+
             <a href="_cv carlos.pdf" class="download" download="CV_Vladislavic">Download CV<i
                     class='bx bx-download'></i></a>
+                    
+            <div class="icons">
+                <a href="#"><i class="ri-linkedin-box-fill"></i></a>
+                <a href="#"><i class="ri-github-fill"></i></a>
+                <a href="#"><i class="ri-mail-line"></i></a>
+            </div>
         </div>
         <div class="hero-img">
             <img src="assets/img/foto_cv-fondo (1).png" alt="foto perfil">
         </div>
+
     </section>
-    <div class="icons">
-        <a href="#"><i class="ri-linkedin-box-fill"></i></a>
-        <a href="#"><i class="ri-github-fill"></i></a>
-        <a href="#"><i class="ri-mail-line"></i></a>
-    </div>
+
     <div class="scroll-down">
         <a href="#"><i class="ri-arrow-down-s-fill"></i></a>
     </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>//script de scroll reveal
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="javascrip.js"></script>
 </body>

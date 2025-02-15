@@ -1,35 +1,47 @@
-/* font-family: "Inconsolata", monospace;
-font-family: "Roboto Mono", monospace; */
-/*normalizacion*/
-*{
+/* ----- Fuentes ----- */
+/* font-family: "Inconsolata", monospace; */
+/* font-family: "Roboto Mono", monospace; */
+
+/* ----- Normalización ----- */
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family:'Inconsolata','monospace';
+    font-family: 'Inconsolata', monospace;
     list-style: none;
     text-decoration: none;
     color: white;
 }
- /* Diseño de Header */
-header{
+
+body {
+    overflow-x: hidden; /* Elimina scroll horizontal no deseado */
+}
+
+
+
+
+header {
     position: fixed;
     right: 0;
     top: 0;
-    z-index: 100;
+    z-index: 1000; /* Aumentado para que esté sobre el texto */
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px 3%;
     background-color: transparent;
+    
 }
-.logo{
+.logo {
     font-size: 30px;
     font-weight: 800;
 }
-.navlist{
-    display: flex;   
+
+.navlist {
+    display: flex;
 }
+
 .navlist a {
     margin-left: 80px;
     font-size: 20px;
@@ -37,128 +49,132 @@ header{
     border-bottom: 2px solid transparent;
     transition: all .5s ease;
 }
-.navlist a:hover{
+
+.navlist a:hover {
     border-bottom: 2px solid white;
 }
 
- #menu-icon{
-    display: none;
-} 
-#menu-icon{
-    font-size: 40px;
-    z-index: 101;
-    cursor: pointer;
-}
-#menu-toggle{
-    display: none;
-}
-.menu-icon-action{
-    display: none;
-}
-/* Diseño de HERO */
-.hero{
+/* ----- Hero Section ----- */
+.hero {
     width: 100%;
-    height: 100%;
     min-height: 100vh;
-    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
-    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 2rem;
-}
-section{
     padding: 0 8%;
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
 }
 
-.hero-text h5{
+.hero-text h5 {
     font-size: 30px;
-    font-weight: 500px;
+    font-weight: 500;
     margin-bottom: 25px;
 }
-.hero-text h4{
+
+.hero-text h4 {
     font-size: 25px;
-    font-weight: 600px;
+    font-weight: 600;
     margin-bottom: 25px;
 }
-.hero-text h1{
+
+.hero-text h1 {
     font-family: "Roboto Mono", monospace;
-    font-size: 55px;
+    font-size: 40px;
     line-height: 1;
-    margin: 0 0 30px;
+    margin-bottom: 30px;
 }
-.hero-text p{
+
+.hero-text p {
     font-size: 80%;
     margin-bottom: 40px;
     line-height: 1.9;
 }
-.hero-img{
+
+.hero-img {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.hero-img img{
+
+.hero-img img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    box-shadow: 10px 10px 20px #888888;
+    transition: all .5s ease;
+}
+
+.hero-img img:hover {
     width: 400px;
     height: 400px;
-    border-radius: 100%;
-    box-shadow: 10px 10px 20px  #888888;
-    transition: all 5s linear;
-    
-}
-.hero-img img:hover{
-    width: 450px;
-    height: 450px;
     opacity: 0.6;
 }
-.hero-text a{
+
+.hero-text .download {
+    /* Mantenemos los estilos originales del botón */
     display: inline-block;
     background-color: #4d4d4d;
     border: 1px solid white;
     padding: 15px;
-    line-height: 1.4;
     font-size: 18px;
     font-weight: 500;
     border-radius: 30px;
     text-transform: uppercase;
     transition: all .5s ease;
     letter-spacing: 1.5px;
-
+    margin-bottom: 20px; /* Añadimos separación */
 }
-.hero-text a i{
+
+
+.hero-text .download i {
     margin-left: 15px;
-    font-size: 20px;    
+    font-size: 20px;
     vertical-align: middle;
 }
-.hero-text a:hover{
+
+.hero-text .download:hover {
     background-color: transparent;
     transform: translateX(5px);
-    
 }
-/* Diseño de Iconos sociales */
-.icons{
+
+/* ----- Iconos Sociales ----- */
+
+.icons {
     position: absolute;
-    top: 50vh;
-    padding: 0 3%;
+    left: -10%;
+    top: 10%;
     transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1000;
 }
-.icons i{
-    display: block;
-    margin: 25px 0;
+
+
+.icons i {
     font-size: 28px;
-    transition: all .5s ease;
+    color: white;
+    display: inline-block;
+    transition: all 0.5s ease;
 }
-.icons i:hover{
+
+
+.icons a:hover i {
     color: #4d4d4d;
     transform: translateY(-5px);
 }
 
-/* diseño de scroll-down */
-.scroll-down{
-    position:absolute;
+
+/* ----- Scroll Down ----- */
+.scroll-down {
+    position: absolute;
     bottom: 6%;
     right: 3%;
 }
-.scroll-down i{
+
+
+.scroll-down i {
     display: block;
     padding: 12px;
     font-size: 30px;
@@ -166,33 +182,154 @@ section{
     border-radius: 30px;
     transition: all .5s ease;
 }
-.scroll-down i:hover{
+
+.scroll-down i:hover {
     transform: translateY(-5px);
 }
 
-@media (max-width:992px)
-{
-    section{
+/* ----- Menú Hamburguesa ----- */
+#menu-icon {
+    display: none;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 1010; /* Asegura que el icono esté por encima del header */
+}
+
+/* ----- Responsive Design ----- */
+@media (max-width: 992px) {
+    #menu-icon {
+        display: block; /* Mostramos el icono del menú solo en pantallas pequeñas */
+        
+    }
+    .navlist {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
+        text-align: center;
+        padding: 10px 0;
+        flex-direction: column;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 1000; /* Mayor que el hero-text */
+    }
+    /* Activamos el menú cuando se hace clic en el icono */
+    .navlist.show {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+    .navlist li {
+        margin: 15px 0;
+    }
+    .icons {
+        position: relative; /* No flotan, se quedan debajo del botón */
+        top: auto;
+        left: auto;
+        transform: none;
+        display: flex; /* Asegura que estén en una fila */
+        flex-direction: row; /* Alineación horizontal */
+        justify-content: center; /* Centra los iconos */
+        gap: 20px; /* Espaciado entre iconos */
+        margin-top: 20px; /* Espacio entre el botón y los iconos */
+    }
+    .icons i {
+        margin: 0 !important; /* Eliminar márgenes verticales */
+        font-size: 24px;
+        transition: none !important; /* Desactivar transición */
+    }
+
+    .icons a:hover {
+        transform: none !important; /* Eliminar efecto hover en móviles */
+    }
+    .hero-text {
+        padding-top: 100px; /* Espacio extra para que no se superponga con el header */
+    }
+    section {
         padding: 0 3%;
-        transition: .2s;
     }
-    .hero-text{
-        padding-top: 0;
+    .hero {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        padding: 100px 5% 40px;
+        position: relative;
     }
-    .hero-img{
+    .hero-img {
+        order: -1; /* Mueve la imagen arriba del texto */
+        margin-bottom: 30px;
+    }
+   
+    .hero-img img {
+        width: 250px;  /* Reducir el tamaño de la imagen */
+        height: 250px;
+    }
+    .scroll-down {
+        display: none; /* Oculta en móviles */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .navlist {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
+        text-align: center;
+        padding: 10px 0;
+        flex-direction: column;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 1000; /* Mayor que el hero-text */
+    }
+
+    .navlist.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
     }
-    .icons{
-        display: flex;
-        position: absolute;
-        bottom: 12%; /* Ajusta este valor según lo necesites */
-        top: auto; /* Para evitar conflictos con el 'top' anterior */
-        transform: translateY(0); /* Resetea el translate para alinear correctamente */
-        padding: 0 3%;
-        
-        }
-        .icons i{
-            margin-right: 40px;
-        }
-       
+
+    .icons {
+        position: relative; /* No flotan, se quedan debajo del botón */
+        top: auto;
+        left: auto;
+        transform: none;
+        display: flex; /* Asegura que estén en una fila */
+        flex-direction: row; /* Alineación horizontal */
+        justify-content: center; /* Centra los iconos */
+        gap: 20px; /* Espaciado entre iconos */
+        margin-top: 20px; /* Espacio entre el botón y los iconos */
     }
+    .navlist li {
+        margin: 15px 0;
+    }
+ 
+    .hero-text h1 {
+        font-size: 40px;
+    }
+
+    .hero-text h5 {
+        font-size: 24px;
+    }
+
+    .hero-img img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+
