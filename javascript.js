@@ -39,3 +39,30 @@ sr.reveal('.scroll-down', {delay: 450, origin: 'right'})
 
 
 
+document.querySelectorAll("a[href^='#']").forEach(function (anchor) {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const targetId = anchor.getAttribute("href").substring(1);
+        const target = document.getElementById(targetId);
+        const headerHeight = document.querySelector('header').offsetHeight;
+
+        if (targetId === "home") {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        } else {
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth"
+            });
+        }
+
+        // Cerrar menú hamburguesa siempre después de hacer clic
+        const navlist = document.getElementById('navlist');
+        if (navlist.classList.contains('show')) {
+            navlist.classList.remove('show');
+        }
+    });
+});
