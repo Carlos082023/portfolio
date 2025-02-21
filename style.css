@@ -26,9 +26,9 @@ header {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content:right;
     padding: 15px 3%;
-    background-color: transparent;
+    background-color: #121212;
     
 }
 .logo {
@@ -224,7 +224,7 @@ header {
 
 .portfolio-item {
     position: relative;
-    width: 500px;
+    width: 650px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -270,6 +270,50 @@ header {
 .portfolio-overlay a:hover {
     transform: scale(1.2);
 }
+
+/* Footer */
+.footer {
+    background-color: #121212; /* Color oscuro elegante */
+    color: #ffffff;
+    text-align: center;
+    padding: 90px 20px;
+    font-family: "Roboto Mono", monospace;
+}
+
+.footer-content h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    text-decoration: underline;
+}
+
+.footer-content p {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 20px;
+    margin: 5px 0;
+    line-height: 25px;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 16px;
+    opacity: 0.7;
+}
+
 
 
 /* ----- Responsive Design ----- */

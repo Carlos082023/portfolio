@@ -35,10 +35,12 @@ const sr = ScrollReveal({
 sr.reveal('.hero-text', {delay: 200, origin: 'top'})
 sr.reveal('.hero-img', {delay: 450, origin: 'top'})
 sr.reveal('.icons', {delay: 500, origin: 'left'})
-sr.reveal('.scroll-down', {delay: 450, origin: 'right'})
+sr.reveal('.portfolio-item', {delay: 300, origin: 'right'})
+sr.reveal('.footer', {delay: 200, origin: 'top'})
 
 
 
+// funcion para el movimiento del scrool
 document.querySelectorAll("a[href^='#']").forEach(function (anchor) {
     anchor.addEventListener("click", function (e) {
         e.preventDefault();
