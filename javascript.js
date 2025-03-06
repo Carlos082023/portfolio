@@ -1,3 +1,4 @@
+//funcion maquina de escribir
 function MyName() {
     const app = document.getElementById('typewriter');
     if (app) {
@@ -11,19 +12,20 @@ function MyName() {
         .start();
     }
 }
-
 document.addEventListener('DOMContentLoaded', MyName);
+
 
 // Capturar el botón y el menú
 document.addEventListener("DOMContentLoaded", () => {
     const menuIcon = document.getElementById("menu-icon");
-    const navList = document.getElementById("navlist");
+    const navList = document.getElementById("nav-list");
 
     menuIcon.addEventListener("click", () => {
         navList.classList.toggle("show");
     });
 });
 
+//ScroolReveal para los efectos
 const sr = ScrollReveal({
     distance : '64px',
     duration :2000,
@@ -62,7 +64,7 @@ document.querySelectorAll("a[href^='#']").forEach(function (anchor) {
         }
 
         // Cerrar menú hamburguesa siempre después de hacer clic
-        const navlist = document.getElementById('navlist');
+        const navlist = document.getElementById('nav-list');
         if (navlist.classList.contains('show')) {
             navlist.classList.remove('show');
         }

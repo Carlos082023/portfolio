@@ -15,8 +15,9 @@
 
 body {
     overflow-x: hidden; /* Elimina scroll horizontal no deseado */
-    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
+background: linear-gradient(245.59deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
 }
+
 
 header {
     position: fixed;
@@ -28,7 +29,7 @@ header {
     align-items: center;
     justify-content:right;
     padding: 15px 3%;
-    background-color: #121212;
+    /* background-color: #121212; */
     
 }
 .logo {
@@ -36,20 +37,21 @@ header {
     font-weight: 800;
 }
 
-.navlist {
+.nav-list {
     display: flex;
 }
 
-.navlist a {
+.nav-list a {
     margin-left: 80px;
     font-size: 26px;
     font-weight: 600;
     border-bottom: 2px solid transparent;
     transition: all .5s ease;
+    color:#E67E22;
 }
 
-.navlist a:hover {
-    border-bottom: 2px solid white;
+.nav-list a:hover {
+    border-bottom: 2px solid #E67E22;;
 }
 
 /* ----- Hero Section ----- */
@@ -101,7 +103,7 @@ header {
     width: 350px;
     height: 350px;
     border-radius: 50%;
-    box-shadow: 10px 10px 20px #888888;
+    box-shadow: 5px 5px 10px #E67E22;;
     transition: all .5s ease;
 }
 
@@ -114,7 +116,8 @@ header {
 .hero-text .download {
     /* Mantenemos los estilos originales del botón */
     display: inline-block;
-    background-color: #4d4d4d;
+    background-color: #00A8E8;
+    color: white;
     border: 1px solid white;
     padding: 15px;
     font-size: 18px;
@@ -134,13 +137,13 @@ header {
 }
 
 .hero-text .download:hover {
-    background-color: transparent;
+    background-color: #E67E22;;
     transform: translateX(5px);
 }
 
 /* ----- Iconos Sociales ----- */
 
-.icons {
+.social-icons {
     position: absolute;
     left: -10%;
     top: 40%;
@@ -152,7 +155,7 @@ header {
 }
 
 
-.icons i {
+.social-icons i {
     font-size: 30px;
     color: white;
     display: inline-block;
@@ -160,8 +163,8 @@ header {
 }
 
 
-.icons a:hover i {
-    color: #4d4d4d;
+.social-icons a:hover i {
+    color: #E67E22;
     transform: translateY(-5px);
 }
 
@@ -227,7 +230,7 @@ header {
     width: 650px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px #E67E22;;
 }
 
 .portfolio-item img {
@@ -298,7 +301,7 @@ header {
 }
 
 .contact-info a {
-    color: #007bff;
+    color:#ed903f;
     text-decoration: none;
     font-weight: bold;
 }
@@ -322,7 +325,7 @@ header {
         display: block; /* Mostramos el icono del menú solo en pantallas pequeñas */
         
     }
-    .navlist {
+    .nav-list {
         position: absolute;
         top: 70px;
         right: 0;
@@ -337,15 +340,15 @@ header {
         z-index: 1000; /* Mayor que el hero-text */
     }
     /* Activamos el menú cuando se hace clic en el icono */
-    .navlist.show {
+    .nav-list.show {
         display: flex;
         opacity: 1;
         visibility: visible;
     }
-    .navlist li {
+    .nav-list li {
         margin: 15px 0;
     }
-    .icons {
+    .social-icons {
         position: relative; /* No flotan, se quedan debajo del botón */
         top: auto;
         left: auto;
@@ -357,12 +360,12 @@ header {
         margin-top: 70px;
        
     }
-    .icons i {
+    .social-icons i {
         font-size: 24px;
         transition: none !important; /* Desactivar transición */
     }
 
-    .icons a:hover {
+    .social-icons a:hover {
         transform: none !important; /* Eliminar efecto hover en móviles */
     }
     .hero-text {
@@ -416,7 +419,7 @@ header {
 
 
 @media (max-width: 768px) {
-    .navlist {
+    .nav-list {
         position: absolute;
         top: 70px;
         right: 0;
@@ -431,7 +434,7 @@ header {
         z-index: 1000; /* Mayor que el hero-text */
     }
 
-    .navlist.show {
+    .nav-list.show {
         opacity: 1;
         visibility: visible;
     }
@@ -446,7 +449,7 @@ header {
         text-align: center;
     }
 
-    .icons {
+    .social-icons {
         position: relative; /* No flotan, se quedan debajo del botón */
         top: auto;
         left: auto;
@@ -457,7 +460,7 @@ header {
         gap: 20px; /* Espaciado entre iconos */
         margin-top: 70px; /* Espacio entre el botón y los iconos */
     }
-    .navlist li {
+    .nav-list li {
         margin: 15px 0;
     }
     .hero-text{
