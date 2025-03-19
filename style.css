@@ -17,42 +17,52 @@ body {
     overflow-x: hidden; /* Elimina scroll horizontal no deseado */
 background: linear-gradient(245.59deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
 }
-
-
 header {
     position: fixed;
-    right: 0;
     top: 0;
-    z-index: 1000; /* Aumentado para que esté sobre el texto */
+    left: 0;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content:right;
+    justify-content: space-between; /* Asegura que los elementos estén en extremos opuestos */
     padding: 15px 3%;
-    /* background-color: #121212; */
-    
+    /*background-color: #121212; /* Color de fondo para igualarlo al nav */
+    z-index: 1000;
 }
-.logo {
-    font-size: 30px;
-    font-weight: 800;
+
+.climate {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 600;
+    gap: 15px; /* Agrega espacio entre los elementos dentro de .climate */
+}
+
+.climate div {
+    color: #E67E22;
 }
 
 .nav-list {
     display: flex;
+   /* background-color: #121212; /* Asegura que el fondo del nav sea igual al del clima */
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .nav-list a {
-    margin-left: 80px;
+    margin-left: 40px;
     font-size: 26px;
-    font-weight: 600;
+    font-weight: 800;
     border-bottom: 2px solid transparent;
     transition: all .5s ease;
-    color:#E67E22;
+    color: #E67E22;
+    
 }
 
 .nav-list a:hover {
-    border-bottom: 2px solid #E67E22;;
+    border-bottom: 2px solid #E67E22;
 }
+
 
 /* ----- Hero Section ----- */
 .hero {
